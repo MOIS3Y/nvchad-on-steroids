@@ -1,10 +1,12 @@
 return {
   {
     "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
     config = function()
       require "configs.conform"
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -12,10 +14,20 @@ return {
       require "configs.lspconfig"
     end,
   },
+  -- {
+  -- 	"williamboman/mason.nvim",
+  -- 	opts = {
+  -- 		ensure_installed = {
+  -- 			"lua-language-server", "stylua",
+  -- 			"html-lsp", "css-lsp" , "prettier"
+  -- 		},
+  -- 	},
+  -- },
+  --
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
         "bash",
         "css",
         -- "dockerfile",
@@ -32,11 +44,11 @@ return {
         "scss",
         "sql",
         "toml",
-  			"vim",
+        "vim",
         "vimdoc",
         "yaml"
-  		},
-  	},
+      },
+    },
   },
   {
     "lukas-reineke/virt-column.nvim",
@@ -46,7 +58,7 @@ return {
   "m4xshen/smartcolumn.nvim",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-        "lukas-reineke/virt-column.nvim",
+      "lukas-reineke/virt-column.nvim",
     },
     opts = {
       disabled_filetypes = {
@@ -64,4 +76,3 @@ return {
   },
   -- add more here ...
 }
-

@@ -6,7 +6,7 @@ local M = {}
 
 M.ui = {
 	theme = "catppuccin",
-   transparency = true,
+  transparency = true,
 
 	hl_override = {
 		["@comment"] = { italic = true },
@@ -15,9 +15,6 @@ M.ui = {
   nvdash = {
     load_on_startup = true
   },
-
-  telescope = { style = "borderless" }, -- borderless / bordered
 }
 
 return M
-

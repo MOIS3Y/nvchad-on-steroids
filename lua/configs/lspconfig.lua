@@ -1,52 +1,52 @@
-local configs = require "nvchad.configs.lspconfig"
+-- EXAMPLE 
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local on_init = require("nvchad.configs.lspconfig").on_init
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
+local lspconfig = require "lspconfig"
 local servers = {
-  -- bash
-  bashls = {
-    settings = {
-      bashIde = {
-        globPattern = "*@(.sh|.inc|.bash|.command)"
-      },
-    },
-  },
-  -- docker
-  docker_compose_language_service = {},  -- :set filetype=yaml.docker-compose
-  dockerls = {
-    docker = {
-	    languageserver = {
-	      formatter = { ignoreMultilineInstructions = true },
-	    },
-    },
-  },
-  -- html  
-  emmet_language_server = {},
-  -- nix
-  nixd = {},
-  -- python
-  pylsp = {
-    configurationSources = { 'flake8' },
-    settings = {
-      plugins = {
-        flake8 = {
-          enabled = true,
-          maxLineLength = 80,
-        },
-        pycodestyle = { enabled = false },
-        pyflakes = { enabled = false },
-        pylint = { enabled = false },
-        mccabe = { enabled = false },
-      },
-    },
-  },
-  -- add more LSP servers here ...
+  "bashls",
+  "cssls",
+  "docker_compose_language_service",  -- :set filetype=yaml.docker-compose
+  "dockerls",
+  "emmet_language_server",
+  "html",
+  "nixd",
+
 }
 
--- load
-for name, opts in pairs(servers) do
-  opts.on_init = configs.on_init
-  opts.on_attach = configs.on_attach
-  opts.capabilities = configs.capabilities
-
-  require("lspconfig")[name].setup(opts)
+-- lsps with default config
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+  }
 end
 
+-- typescript
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+}
+
+--python
+lspconfig.pylsp.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  configurationSources = { 'flake8' },
+  settings = {
+    plugins = {
+      flake8 = {
+        enabled = true,
+        maxLineLength = 80,
+      },
+      pycodestyle = { enabled = false },
+      pyflakes = { enabled = false },
+      pylint = { enabled = false },
+      mccabe = { enabled = false },
+    },
+  }
+}
