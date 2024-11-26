@@ -10,6 +10,7 @@ local servers = {
   "docker_compose_language_service",  -- :set filetype=yaml.docker-compose
   "dockerls",
   "emmet_language_server",
+  "jsonls",
   "html",
   "nixd",
 }
