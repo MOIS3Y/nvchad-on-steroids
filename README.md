@@ -12,7 +12,7 @@ which are defined in the
 [nixos-configurations](https://github.com/MOIS3Y/nixos-configurations) repo:
 
 
-- I use [home-manager module nvchad4nix](https://github.com/MOIS3Y/nvchad4nix)
+- I use [home-manager module nix4nvchad](https://github.com/nix-community/nix4nvchad)
 to add NvChad to user config
 - it’s more convenient to do additional configuration in pure `.lua`
 without mixing it with `.nix`
