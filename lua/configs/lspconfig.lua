@@ -6,12 +6,14 @@ local nvlsp = require "nvchad.configs.lspconfig"
 
 local servers = {
   "bashls",
+  "blueprint_ls",
   "cssls",
   "docker_compose_language_service",  -- :set filetype=yaml.docker-compose
   "dockerls",
   "jsonls",
   "html",
   "nixd",
+  "vala_ls",
 }
 
 -- lsps with default config

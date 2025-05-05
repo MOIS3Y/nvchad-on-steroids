@@ -29,6 +29,7 @@ return {
     opts = {
       ensure_installed = {
         "bash",
+        "blueprint",
         "css",
         -- "dockerfile",
         "gitignore",
@@ -44,6 +45,7 @@ return {
         "scss",
         "sql",
         "toml",
+        "vala",
         "vim",
         "vimdoc",
         "yaml"

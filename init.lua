@@ -35,3 +35,19 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- fix toggle comment for vala
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "vala",
+  callback = function()
+    vim.bo.commentstring = "// %s"
+  end,
+})
+
+-- fix toggle comment for blueprint
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "blueprint",
+  callback = function()
+    vim.bo.commentstring = "// %s"
+  end,
+})
