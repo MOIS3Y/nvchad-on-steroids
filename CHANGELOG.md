@@ -17,3 +17,15 @@
 
 ### Fixed
 - vala, blp toggle comments
+
+## [0.1.2] - 2025-05-06
+### Added
+- NvDash always open on empty buffer
+- nvzone/menu mappings
+- nvzone/minty mappings
+
+### Updated
+- lazy-lock.json
+
+### Changed
+- LSP servers init by `vim.lsp.enable` !required nvim `v0.11.0` or above
