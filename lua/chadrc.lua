@@ -6,11 +6,11 @@
 local M = {}
 
 M.base46 = {
-	theme = "catppuccin",
-	transparency = true,
-	hl_override = {
-		["@comment"] = { italic = true },
-	}
+  theme = "catppuccin",
+  transparency = true,
+  hl_override = {
+    ["@comment"] = { italic = true },
+  }
 }
 
 M.nvdash = {
