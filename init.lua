@@ -6,7 +6,10 @@ local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
 if not vim.uv.fs_stat(lazypath) then
   local repo = "https://github.com/folke/lazy.nvim.git"
-  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+  vim.fn.system { 
+    "git", "clone", "--filter=blob:none", repo, "--branch=stable",
+    lazypath
+  }
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -31,23 +34,8 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
 require "nvchad.autocmds"
+require "autocmd"
 
 vim.schedule(function()
   require "mappings"
 end)
-
--- fix toggle comment for vala
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "vala",
-  callback = function()
-    vim.bo.commentstring = "// %s"
-  end,
-})
-
--- fix toggle comment for blueprint
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "blueprint",
-  callback = function()
-    vim.bo.commentstring = "// %s"
-  end,
-})
