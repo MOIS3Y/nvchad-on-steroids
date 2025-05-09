@@ -12,6 +12,8 @@ Nothing special, a few additional plugins and preset settings.
 - default `NvChad` plugins collection
 - lukas-reineke/virt-column.nvim
 - m4xshen/smartcolumn.nvim
+- HiPhish/rainbow-delimiters.nvim
+- echasnovski/mini.indentscope
 
 
 ## LSP servers

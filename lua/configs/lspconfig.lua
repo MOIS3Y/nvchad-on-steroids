@@ -12,6 +12,7 @@ local servers = {
   jsonls = {},
   html = {},
   nixd = {},
+  rust_analyzer = {},
   vala_ls = {},
   -- with custom options
   emmet_language_server = {

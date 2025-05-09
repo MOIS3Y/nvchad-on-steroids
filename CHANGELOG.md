@@ -29,3 +29,17 @@
 
 ### Changed
 - LSP servers init by `vim.lsp.enable` !required nvim `v0.11.0` or above
+
+## [0.1.3] - 2025-05-09
+### Added
+- rust language support
+- ftplugin
+- gitsigns mapping
+
+### Updated
+- lazy-lock.json
+
+### Changed
+- disable mason
+- switch from nvim-cmp to blink.cmp !still experimental
+- each plugin has its own file
