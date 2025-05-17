@@ -106,3 +106,9 @@ map("n", "<leader>gbw",
   gitsigns.toggle_word_diff,
   { desc = "toggle word diff" }
 )
+
+--! -- -- -- conform -- -- -- !--
+map("n", "<leader>cf", function()
+  require("conform").format({ async = true, lsp_fallback = true })
+end, { desc = "conform format file" }
+)

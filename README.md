@@ -29,6 +29,7 @@ Nothing special, a few additional plugins and preset settings.
 - emmet_language_server
 - ts_ls
 - pylsp
+- rust-analyzer
 
 
 ## Nix notes
@@ -47,3 +48,6 @@ without mixing it with `.nix`
 ## Manual installation
 - Follow [official docs](https://nvchad.com/docs/quickstart/install) installation steps
 - Replace `github:NvChad/starter` url on `github:MOIS3Y/nvchad-on-steroids` in commands
+
+
+## [CHANGELOG.md](CHANGELOG.md)

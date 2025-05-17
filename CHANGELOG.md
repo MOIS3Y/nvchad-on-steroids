@@ -43,3 +43,14 @@
 - disable mason
 - switch from nvim-cmp to blink.cmp !still experimental
 - each plugin has its own file
+
+## [0.1.4] - 2025-05-17
+### Added
+- conform formatters
+- conform mapping
+
+### Updated
+- lazy-lock.json
+
+### Changed
+- ruff instead of flake8 for pylsp

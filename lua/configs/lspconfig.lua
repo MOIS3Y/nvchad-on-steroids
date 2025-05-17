@@ -61,13 +61,25 @@ local servers = {
     },
   },
   pylsp = {
-    configurationSources = { 'flake8' },
     settings = {
       plugins = {
-        flake8 = {
-          enabled = true,
-          maxLineLength = 80,
+        ruff = {
+          enable = true,
+          formatEnabled = true,
+          -- ignored when a pyproject.toml or ruff.toml is present
+          lineLength = 79,
+          select = {
+            "E",  -- pycodestyle errors (PEP 8)
+            "W",  -- pycodestyle warnings
+            "F",  -- PyFlakes
+            "I",  -- isort
+            "UP"  -- pyupgrade
+          },
+          perFileIgnores = {
+            ["__init__.py"] = "CPY001"
+          },
         },
+        flake8 = { enabled = false, },
         pycodestyle = { enabled = false },
         pyflakes = { enabled = false },
         pylint = { enabled = false },

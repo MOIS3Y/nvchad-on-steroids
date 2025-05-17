@@ -1,15 +1,14 @@
 local options = {
   formatters_by_ft = {
+    css = { "prettier" },
+    html = { "prettier" },
     lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
+    nix = { "nixfmt" },
+    python = { "ruff_format" },
+    rust = { "rustfmt", lsp_format = "fallback" },
+    vala = { lsp_format = "always" },
   },
-
-  -- format_on_save = {
-  --   -- These options will be passed to conform.format()
-  --   timeout_ms = 500,
-  --   lsp_fallback = true,
-  -- },
+  format_on_save = false,
 }
 
 return options
